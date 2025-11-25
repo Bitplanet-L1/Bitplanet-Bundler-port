@@ -62,6 +62,9 @@ importers:
 
   src:
     dependencies:
+      '@fastify/cors':
+        specifier: ^10.0.2
+        version: 10.1.0
       '@fastify/websocket':
         specifier: ^10.0.1
         version: 10.0.1
@@ -1192,6 +1195,13 @@ packages:
       ajv: 8.12.0
       ajv-formats: 2.1.1(ajv@8.12.0)
       fast-uri: 2.3.0
+    dev: false
+
+  /@fastify/cors@10.1.0:
+    resolution: {integrity: sha512-MZyBCBJtII60CU9Xme/iE4aEy8G7QpzGR8zkdXZkDFt7ElEMachbE61tfhAG/bvSaULlqlf0huMT12T7iqEmdQ==}
+    dependencies:
+      fastify-plugin: 5.1.0
+      mnemonist: 0.40.0
     dev: false
 
   /@fastify/error@3.4.1:
@@ -4027,6 +4037,10 @@ packages:
     resolution: {integrity: sha512-stRHYGeuqpEZTL1Ef0Ovr2ltazUT9g844X5z/zEBFLG8RYlpDiOCIG+ATvYEp+/zmc7sN29mcIMp8gvYplYPIQ==}
     dev: false
 
+  /fastify-plugin@5.1.0:
+    resolution: {integrity: sha512-FAIDA8eovSt5qcDgcBvDuX/v0Cjz0ohGhENZ/wpc3y+oZCY2afZ9Baqql3g/lC+OHRnciQol4ww7tuthOb9idw==}
+    dev: false
+
   /fastify@4.26.0:
     resolution: {integrity: sha512-Fq/7ziWKc6pYLYLIlCRaqJqEVTIZ5tZYfcW/mDK2AQ9v/sqjGFpj0On0/7hU50kbPVjLO4de+larPA1WwPZSfw==}
     dependencies:
@@ -5154,6 +5168,12 @@ packages:
       ufo: 1.5.4
     dev: false
 
+  /mnemonist@0.40.0:
+    resolution: {integrity: sha512-kdd8AFNig2AD5Rkih7EPCXhu/iMvwevQFX/uEiGhZyPZi7fHqOoF4V4kHLpCfysxXMgQ4B52kdPMCwARshKvEg==}
+    dependencies:
+      obliterator: 2.0.5
+    dev: false
+
   /mocha@10.2.0:
     resolution: {integrity: sha512-IDY7fl/BecMwFHzoqF2sg/SHHANeBoMMXFlS9r0OXKDssYE1M5O43wUY/9BVPeIvfH2zmEbBfseqN9gBQZzXkg==}
     engines: {node: '>= 14.0.0'}
@@ -5371,6 +5391,10 @@ packages:
       has-symbols: 1.0.3
       object-keys: 1.1.1
     dev: true
+
+  /obliterator@2.0.5:
+    resolution: {integrity: sha512-42CPE9AhahZRsMNslczq0ctAEtqk8Eka26QofnqC346BZdHDySk3LWka23LI7ULIw11NmltpiLagIq8gBozxTw==}
+    dev: false
 
   /on-exit-leak-free@2.1.2:
     resolution: {integrity: sha512-0eJJY6hXLGf1udHwfNftBqH+g73EU4B504nZeKpz1sYRKafAghwxEJunB2O7rDZkL4PGfsMVnTXZ2EjibbqcsA==}
