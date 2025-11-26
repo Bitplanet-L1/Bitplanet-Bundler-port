@@ -165,13 +165,14 @@ export class Server {
                                 `GET request to /${version}/rpc is not supported, use POST isntead`
                             )
                     },
-                    wsHandler: (socket: WebSocket.WebSocket, request) => {
+                    wsHandler: (connection, request) => {
+                        const socket = connection.socket as WebSocket.WebSocket
                         // Extract API key from query parameters or headers
                         const url = new URL(request.url || '', `http://${request.headers.host || 'localhost'}`)
                         const apiKeyFromQuery = url.searchParams.get('apiKey')
                         const apiKeyFromHeader = request.headers['x-api-key'] as string | undefined
                         const apiKey = apiKeyFromQuery || apiKeyFromHeader
-                        
+
                         socket.on("message", async (msgBuffer: Buffer) =>
                             this.rpcSocket(request, msgBuffer, socket, apiKey)
                         )
