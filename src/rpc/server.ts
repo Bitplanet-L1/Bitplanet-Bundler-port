@@ -97,6 +97,7 @@ export class Server {
         this.fastify.register(cors, {
             origin: [
                 /^http:\/\/localhost(:\d+)?$/,
+                /^https:\/\/localhost(:\d+)?$/,
                 /^http:\/\/127\.0\.0\.1(:\d+)?$/,
                 /^https?:\/\/([a-z0-9-]+\.)?bitplanet\.ai$/,
                 /^https?:\/\/([a-z0-9-]+\.)?deva\.me$/
