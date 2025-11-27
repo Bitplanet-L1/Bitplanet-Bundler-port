@@ -629,6 +629,12 @@ export const pimlicoGetUserOperationGasPriceSchema = z.object({
     result: gasPriceSchema
 })
 
+export const zdGetUserOperationGasPriceSchema = z.object({
+    method: z.literal("zd_getUserOperationGasPrice"),
+    params: z.tuple([]),
+    result: gasPriceSchema
+})
+
 export const pimlicoSendUserOperationNowSchema = z.object({
     method: z.literal("pimlico_sendUserOperationNow"),
     params: z.tuple([userOperationSchema, addressSchema]),
@@ -658,7 +664,8 @@ export const bundlerRequestSchema = z.discriminatedUnion("method", [
     debugGetStakeStatusSchema.omit({ result: true }),
     pimlicoGetUserOperationStatusSchema.omit({ result: true }),
     pimlicoGetUserOperationGasPriceSchema.omit({ result: true }),
-    pimlicoSendUserOperationNowSchema.omit({ result: true })
+    pimlicoSendUserOperationNowSchema.omit({ result: true }),
+    zdGetUserOperationGasPriceSchema.omit({ result: true })
 ])
 export type BundlerRequest = z.infer<typeof bundlerRequestSchema>
 
@@ -681,7 +688,8 @@ export const bundlerRpcSchema = z.union([
     debugGetStakeStatusSchema,
     pimlicoGetUserOperationStatusSchema,
     pimlicoGetUserOperationGasPriceSchema,
-    pimlicoSendUserOperationNowSchema
+    pimlicoSendUserOperationNowSchema,
+    zdGetUserOperationGasPriceSchema
 ])
 
 export type BundlingMode = z.infer<
